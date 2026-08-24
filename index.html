@@ -1,0 +1,562 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Future International School</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background: #f7faff;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #175cff;
+        }
+
+        .logo span {
+            color: #ff8a00;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #172033;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #175cff;
+        }
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 8% 80px;
+            display: flex;
+            align-items: center;
+            color: white;
+            background:
+                linear-gradient(rgba(4,24,65,0.60), rgba(4,24,65,0.65)),
+                url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=2000&q=90")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 75px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #ffd166;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background: #ff8a00;
+            color: white;
+        }
+
+        .btn-light {
+            background: white;
+            color: #175cff;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #687386;
+        }
+
+        .features {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .feature {
+            background: white;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(31,65,114,0.09);
+        }
+
+        .feature .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+            color: #175cff;
+        }
+
+        .about {
+            background: #eef5ff;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .about h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #5e6878;
+            margin-bottom: 18px;
+        }
+
+        .programs {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .program {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(31,65,114,0.10);
+        }
+
+        .program img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .program-content {
+            padding: 25px;
+        }
+
+        .program-content h3 {
+            color: #175cff;
+            margin-bottom: 10px;
+        }
+
+        .campus {
+            color: white;
+            text-align: center;
+            background:
+                linear-gradient(rgba(8,37,80,0.68), rgba(8,37,80,0.68)),
+                url("https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=2000&q=90")
+                center/cover;
+        }
+
+        .campus h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            max-width: 1000px;
+            margin: 40px auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .stat h3 {
+            font-size: 42px;
+            color: #ffd166;
+        }
+
+        .gallery {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.04);
+        }
+
+        .contact {
+            background: #eef5ff;
+        }
+
+        .contact-box {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        .contact-box p {
+            margin: 10px 0;
+        }
+
+        footer {
+            background: #07152e;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        footer p {
+            color: #b9c3d4;
+        }
+
+        @media (max-width: 800px) {
+            nav ul {
+                display: none;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            section {
+                padding: 65px 5%;
+            }
+
+            .hero {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .stats,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Bright<span>Future</span></div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#campus">Campus</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Inspiring <span>Young Minds</span> for a Brighter Future</h1>
+        <p>
+            Welcome to Bright Future International School — where curiosity,
+            creativity and knowledge come together to shape tomorrow's leaders.
+        </p>
+
+        <a href="#contact" class="btn btn-primary">Admissions Open</a>
+        <a href="#about" class="btn btn-light">Explore School</a>
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>Why Choose Us?</h2>
+        <p>Education designed for the leaders of tomorrow.</p>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <div class="icon">🎓</div>
+            <h3>Expert Teachers</h3>
+            <p>Experienced and passionate educators focused on every student's growth.</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🔬</div>
+            <h3>Modern Learning</h3>
+            <p>Technology-enabled classrooms, innovative learning and practical education.</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🏆</div>
+            <h3>Excellence</h3>
+            <p>Encouraging students to achieve academic, sporting and creative excellence.</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🌱</div>
+            <h3>Holistic Growth</h3>
+            <p>Building confidence, leadership, creativity and strong values.</p>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-container">
+
+        <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=90"
+            alt="Students learning in a modern classroom">
+
+        <div>
+            <h2>Learning Beyond the Classroom</h2>
+
+            <p>
+                At Bright Future International School, we believe education is
+                more than textbooks and examinations.
+            </p>
+
+            <p>
+                Our students learn through collaboration, experiments,
+                technology, sports, arts and real-world experiences.
+            </p>
+
+            <p>
+                We create an environment where every child feels confident
+                to ask questions, explore ideas and discover their potential.
+            </p>
+
+            <a href="#programs" class="btn btn-primary">Our Programs</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="programs">
+    <div class="section-title">
+        <h2>Our Academic Programs</h2>
+        <p>Innovative education for every stage of childhood.</p>
+    </div>
+
+    <div class="programs">
+
+        <div class="program">
+            <img
+                src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1400&q=90"
+                alt="Primary school students">
+
+            <div class="program-content">
+                <h3>Primary School</h3>
+                <p>
+                    Building strong foundations through creativity,
+                    curiosity and interactive learning.
+                </p>
+            </div>
+        </div>
+
+        <div class="program">
+            <img
+                src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1400&q=90"
+                alt="Secondary school students">
+
+            <div class="program-content">
+                <h3>Secondary School</h3>
+                <p>
+                    Developing critical thinking, communication and
+                    problem-solving skills.
+                </p>
+            </div>
+        </div>
+
+        <div class="program">
+            <img
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1400&q=90"
+                alt="Students working together">
+
+            <div class="program-content">
+                <h3>Future Skills</h3>
+                <p>
+                    Coding, robotics, artificial intelligence,
+                    entrepreneurship and digital literacy.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="campus" id="campus">
+    <h2>A Campus Built for Inspiration</h2>
+    <p>
+        Safe, modern and vibrant spaces where students learn, play and grow.
+    </p>
+
+    <div class="stats">
+        <div class="stat">
+            <h3>25+</h3>
+            <p>Years of Excellence</p>
+        </div>
+
+        <div class="stat">
+            <h3>2,500+</h3>
+            <p>Students</p>
+        </div>
+
+        <div class="stat">
+            <h3>150+</h3>
+            <p>Expert Teachers</p>
+        </div>
+
+        <div class="stat">
+            <h3>98%</h3>
+            <p>University Success</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <div class="section-title">
+        <h2>Life at Bright Future</h2>
+        <p>Discover moments from our vibrant school community.</p>
+    </div>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=90" alt="Students in classroom">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=90" alt="School campus">
+        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=90" alt="Student learning">
+        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1200&q=90" alt="Modern classroom">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=90" alt="Students together">
+        <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=1200&q=90" alt="Students studying">
+        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=1200&q=90" alt="School students">
+        <img src="https://images.unsplash.com/photo-1561089489-f13d5e730d72?auto=format&fit=crop&w=1200&q=90" alt="School activity">
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="section-title">
+        <h2>Start Your Child's Journey</h2>
+        <p>Admissions are now open for the upcoming academic year.</p>
+    </div>
+
+    <div class="contact-box">
+        <h3>Bright Future International School</h3>
+
+        <p>📍 123 Knowledge Avenue, Pune, Maharashtra</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ admissions@brightfuture.edu</p>
+
+        <br>
+
+        <a href="mailto:admissions@brightfuture.edu" class="btn btn-primary">
+            Contact Admissions
+        </a>
+    </div>
+</section>
+
+<footer>
+    <h3>Bright Future International School</h3>
+    <p>Learn • Explore • Create • Lead</p>
+    <p>© 2026 Bright Future International School. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+```
